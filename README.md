@@ -61,6 +61,10 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+## Security & Requirements
+
+El entorno de ejecución requiere **PHP 8.2+ o PHP 8.3+** (recomendado PHP 8.3.36+) con parches para mitigar CVE-2024-4577. Para más información técnica y directrices de hardening, consultar [SECURITY.md](SECURITY.md).
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
