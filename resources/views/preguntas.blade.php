@@ -5,7 +5,7 @@
 @section('content')
 <!-- Header de la Sección -->
 <div class="bg-brand-600 text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <nav class="text-xs text-brand-200 mb-2">
             <a href="/" class="hover:underline">Inicio</a> &gt; <span class="text-white">Preguntas Frecuentes</span>
         </nav>
@@ -13,13 +13,6 @@
         <p class="text-brand-100 text-base sm:text-lg mt-2 font-medium">
             Resolvemos las dudas más habituales sobre consultas, requisitos, gratuidad y trámites en nuestra red comunitaria.
         </p>
-
-        <!-- Buscador de Preguntas en Vivo -->
-        <div class="mt-6 max-w-xl mx-auto relative">
-            <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-slate-400 text-lg"></i>
-            <input type="text" id="faq-search" placeholder="Escribe tu duda (ej. costos, documentos, urgencias, citas)..." 
-                   class="w-full pl-12 pr-4 py-3.5 text-base sm:text-lg rounded-2xl text-slate-900 bg-white shadow-xl focus:outline-none focus:ring-4 focus:ring-accent-500 font-medium">
-        </div>
     </div>
 </div>
 
@@ -29,44 +22,44 @@
         <!-- Columna Izquierda: Acordeón de Preguntas (8 columnas) -->
         <div class="lg:col-span-8 space-y-4" id="faq-list">
             
-            <!-- Pregunta 1 -->
-            <div class="faq-item bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
-                <button type="button" class="faq-btn w-full p-5 text-left flex justify-between items-center gap-4 hover:bg-slate-50 transition" aria-expanded="false">
+            <!-- Pregunta y Respuesta 1 -->
+            <div class="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
+                <div id="pregunta1" class="cursor-pointer p-5 flex justify-between items-center gap-4 hover:bg-slate-50 transition select-none">
                     <span class="font-bold text-slate-900 text-base sm:text-lg flex items-center gap-3">
                         <i class="fa-solid fa-circle-question text-brand-600 text-xl"></i>
                         ¿La consulta médica y los medicamentos tienen algún costo?
                     </span>
-                    <i class="fa-solid fa-chevron-down text-slate-400 transition transform text-base"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-6 pt-1 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
+                    <i class="fa-solid fa-chevron-down text-slate-400 text-base"></i>
+                </div>
+                <div id="respuesta1" class="hidden px-6 pb-6 pt-2 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
                     <strong class="text-slate-900 font-black">No, la atención médica de primer contacto es 100% gratuita.</strong> Esto incluye la valoración del médico general, control del niño sano, vacunas, ginecología y los medicamentos esenciales del catálogo básico municipal. Ningún empleado tiene autorización de cobrarte cuota alguna.
                 </div>
             </div>
 
-            <!-- Pregunta 2 -->
-            <div class="faq-item bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
-                <button type="button" class="faq-btn w-full p-5 text-left flex justify-between items-center gap-4 hover:bg-slate-50 transition" aria-expanded="false">
+            <!-- Pregunta y Respuesta 2 -->
+            <div class="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
+                <div id="pregunta2" class="cursor-pointer p-5 flex justify-between items-center gap-4 hover:bg-slate-50 transition select-none">
                     <span class="font-bold text-slate-900 text-base sm:text-lg flex items-center gap-3">
                         <i class="fa-solid fa-circle-question text-brand-600 text-xl"></i>
                         ¿Puedo atenderme si no tengo IMSS, ISSSTE ni seguro médico?
                     </span>
-                    <i class="fa-solid fa-chevron-down text-slate-400 transition transform text-base"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-6 pt-1 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
+                    <i class="fa-solid fa-chevron-down text-slate-400 text-base"></i>
+                </div>
+                <div id="respuesta2" class="hidden px-6 pb-6 pt-2 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
                     <strong class="text-slate-900 font-black">¡Por supuesto!</strong> El objetivo primordial de la Red de Clínicas Comunitarias es atender precisamente a la población sin derechohabiencia laboral. Cualquier persona que viva en el municipio tiene derecho a la consulta presentando únicamente su identificación y comprobante de domicilio.
                 </div>
             </div>
 
-            <!-- Pregunta 3 -->
-            <div class="faq-item bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
-                <button type="button" class="faq-btn w-full p-5 text-left flex justify-between items-center gap-4 hover:bg-slate-50 transition" aria-expanded="false">
+            <!-- Pregunta y Respuesta 3 -->
+            <div class="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
+                <div id="pregunta3" class="cursor-pointer p-5 flex justify-between items-center gap-4 hover:bg-slate-50 transition select-none">
                     <span class="font-bold text-slate-900 text-base sm:text-lg flex items-center gap-3">
                         <i class="fa-solid fa-circle-question text-brand-600 text-xl"></i>
                         ¿Qué documentos debo presentar en mi primera consulta?
                     </span>
-                    <i class="fa-solid fa-chevron-down text-slate-400 transition transform text-base"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-6 pt-1 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
+                    <i class="fa-solid fa-chevron-down text-slate-400 text-base"></i>
+                </div>
+                <div id="respuesta3" class="hidden px-6 pb-6 pt-2 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
                     Para abrir tu expediente clínico permanente debes presentar en ventanilla:
                     <ul class="list-disc list-inside mt-2.5 space-y-1.5 font-semibold text-slate-800">
                         <li>Identificación oficial con foto (INE, pasaporte o cartilla).</li>
@@ -77,30 +70,30 @@
                 </div>
             </div>
 
-            <!-- Pregunta 4 -->
-            <div class="faq-item bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
-                <button type="button" class="faq-btn w-full p-5 text-left flex justify-between items-center gap-4 hover:bg-slate-50 transition" aria-expanded="false">
+            <!-- Pregunta y Respuesta 4 -->
+            <div class="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
+                <div id="pregunta4" class="cursor-pointer p-5 flex justify-between items-center gap-4 hover:bg-slate-50 transition select-none">
                     <span class="font-bold text-slate-900 text-base sm:text-lg flex items-center gap-3">
                         <i class="fa-solid fa-circle-question text-brand-600 text-xl"></i>
                         ¿Qué hago en caso de una urgencia médica grave?
                     </span>
-                    <i class="fa-solid fa-chevron-down text-slate-400 transition transform text-base"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-6 pt-1 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
+                    <i class="fa-solid fa-chevron-down text-slate-400 text-base"></i>
+                </div>
+                <div id="respuesta4" class="hidden px-6 pb-6 pt-2 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
                     En nuestras clínicas atendemos <strong class="text-slate-900 font-black">urgencias menores las 24 horas</strong> (suturas, deshidratación, curaciones, fiebre alta). Si se trata de una urgencia crítica (infarto, traumatismo mayor o pérdida de conocimiento), comunícate inmediatamente al <strong class="text-red-600 font-black">911</strong> o acude al área de urgencias del Hospital General de la ciudad.
                 </div>
             </div>
 
-            <!-- Pregunta 5 -->
-            <div class="faq-item bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
-                <button type="button" class="faq-btn w-full p-5 text-left flex justify-between items-center gap-4 hover:bg-slate-50 transition" aria-expanded="false">
+            <!-- Pregunta y Respuesta 5 -->
+            <div class="bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-sm">
+                <div id="pregunta5" class="cursor-pointer p-5 flex justify-between items-center gap-4 hover:bg-slate-50 transition select-none">
                     <span class="font-bold text-slate-900 text-base sm:text-lg flex items-center gap-3">
                         <i class="fa-solid fa-circle-question text-brand-600 text-xl"></i>
                         ¿Puedo agendar citas para mis familiares (hijos o abuelos)?
                     </span>
-                    <i class="fa-solid fa-chevron-down text-slate-400 transition transform text-base"></i>
-                </button>
-                <div class="faq-content hidden px-6 pb-6 pt-1 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
+                    <i class="fa-solid fa-chevron-down text-slate-400 text-base"></i>
+                </div>
+                <div id="respuesta5" class="hidden px-6 pb-6 pt-2 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 font-medium">
                     <strong class="text-slate-900 font-black">Sí.</strong> En nuestro sistema digital de citas puedes ingresar el nombre y CURP del paciente beneficiario, y registrar tu propio número de teléfono para recibir el comprobante con el número de folio asignado.
                 </div>
             </div>
@@ -142,45 +135,6 @@
     </div>
 </div>
 
-<!-- Script del Acordeón con Búsqueda en Vivo -->
-<script>
-    document.querySelectorAll('.faq-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling;
-            const icon = btn.querySelector('.fa-chevron-down');
-            const isHidden = content.classList.toggle('hidden');
-            btn.setAttribute('aria-expanded', !isHidden);
-            if (isHidden) {
-                icon.classList.remove('rotate-180');
-            } else {
-                icon.classList.add('rotate-180');
-            }
-        });
-    });
-
-    // Búsqueda en tiempo real de preguntas
-    const faqSearch = document.getElementById('faq-search');
-    if (faqSearch) {
-        faqSearch.addEventListener('input', (e) => {
-            const val = e.target.value.toLowerCase().trim();
-            document.querySelectorAll('.faq-item').forEach(item => {
-                const text = item.innerText.toLowerCase();
-                const content = item.querySelector('.faq-content');
-                const icon = item.querySelector('.fa-chevron-down');
-
-                if (!val) {
-                    item.classList.remove('hidden');
-                    content.classList.add('hidden');
-                    if (icon) icon.classList.remove('rotate-180');
-                } else if (text.includes(val)) {
-                    item.classList.remove('hidden');
-                    content.classList.remove('hidden');
-                    if (icon) icon.classList.add('rotate-180');
-                } else {
-                    item.classList.add('hidden');
-                }
-            });
-        });
-    }
-</script>
+<!-- Enlace al archivo JavaScript externo de la actividad -->
+<script src="{{ asset('js/preguntas.js') }}"></script>
 @endsection
