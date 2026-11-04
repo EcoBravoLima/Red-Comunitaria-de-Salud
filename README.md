@@ -38,6 +38,32 @@ A continuación se detalla la evolución pedagógica y técnica del proyecto a l
 | **Act. 11** | **Guía del Paciente, Horarios e Identidad** | Implementación de `guia-paciente.blade.php` (trámites, requisitos para consultas, derechos del paciente) y `nosotros.blade.php` (misión, visión, valores éticos y directorio directivo de la red de salud). |
 | **Act. 12** | **JavaScript Básico: Acordeón Interactivo (FAQ)** | Implementación de interacción con JavaScript nativo en `preguntas.blade.php` y `public/js/preguntas.js`: acordeón de preguntas frecuentes utilizando enlace de elementos por `getElementById`, asignación de eventos con `addEventListener` y alternancia de visibilidad mediante `classList.toggle("hidden")`. |
 | **Act. 13** | **JavaScript: Filtrado por Categorías** | Implementación de un catálogo dinámico en `noticias.blade.php` con 20 comunicados oficiales (5 por categoría). Filtrado en cliente con `public/js/categorias.js` empleando `getElementById`, `getElementsByClassName`, manipulación de `classList.add/remove`, validación con atributos `data-categoria` y funciones explícitas sin base de datos. |
+| **Act. 14** | **JavaScript: Subcategorías con Checkboxes** | Filtrado avanzado con 3 categorías principales y 3 subcategorías cada una mediante checkboxes. Implementa reglas de **inclusión (OR)** dentro de la misma categoría y **exclusión (AND)** entre categorías diferentes utilizando `getElementById`, `getElementsByClassName`, `classList.add/remove` y `addEventListener`. |
+
+---
+
+## 🔬 Detalle Técnico de la Actividad 14: JavaScript - Subcategorías con Checkboxes
+
+La **Actividad 14** expande las capacidades de filtrado del catálogo incorporando 3 dimensiones o categorías de clasificación con 3 subcategorías cada una, manipuladas mediante casillas de verificación (**checkboxes**) agrupadas en divisiones:
+
+### 1. Dimensiones de Clasificación (Categorías y Subcategorías)
+1. **Tipo de Atención / Especialidad:**
+   - Vacunación (`sub-vacunacion`)
+   - Salud Dental (`sub-dental`)
+   - Alertas y Preventiva (`sub-alerta`)
+2. **Población Objetivo:**
+   - Infantil y Escolar (`sub-infantil`)
+   - Adultos y Trabajadores (`sub-adultos`)
+   - Adultos Mayores (`sub-mayor`)
+3. **Modalidad / Sede de Atención:**
+   - Unidad Médica Fija (`sub-clinica`)
+   - Brigada Móvil / Parques (`sub-brigada`)
+   - Planteles Escolares (`sub-escuela`)
+
+### 2. Reglas Lógicas de Filtrado
+* **Inclusión (OR dentro de la misma categoría):** Cuando se seleccionan dos o más subcategorías de la misma categoría (ej. *Vacunación* y *Salud Dental*), se muestran todos los artículos que pertenezcan a cualquiera de ellas.
+* **Exclusión (AND entre categorías diferentes):** Cuando se seleccionan subcategorías de dos o más categorías distintas (ej. *Vacunación* y *Planteles Escolares*), el sistema exige que el artículo cumpla simultáneamente con ambas condiciones; de lo contrario, queda excluido.
+* **Seleccionar Todos o Ninguno:** Si está marcado el checkbox *"Ver Todos"* o si todas las casillas están desmarcadas, se muestran automáticamente todos los comunicados.
 
 ---
 

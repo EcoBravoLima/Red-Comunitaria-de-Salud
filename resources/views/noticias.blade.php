@@ -16,46 +16,118 @@
     </div>
 </div>
 
-<!-- Menú de Categorías para Filtrado -->
-<div class="bg-white border-b-2 border-slate-200 py-4 shadow-sm sticky top-20 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3">
-        <div class="flex flex-wrap items-center gap-2" id="menu-categorias">
-            <span class="font-bold text-slate-700 text-sm"><i class="fa-solid fa-filter text-brand-600"></i> Categoría:</span>
+<!-- ==================================================================== -->
+<!-- PANEL DE FILTRADO POR CATEGORÍAS Y SUBCATEGORÍAS CON CHECKBOXES       -->
+<!-- ==================================================================== -->
+<div class="bg-white border-b-2 border-slate-200 py-6 shadow-sm sticky top-20 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+        
+        <!-- Fila Superior: Título y Checkbox "Ver Todos" -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+            <div class="flex items-center gap-2">
+                <span class="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center text-base">
+                    <i class="fa-solid fa-sliders"></i>
+                </span>
+                <div>
+                    <h2 class="text-sm sm:text-base font-black text-slate-900 leading-tight">Filtro Avanzado por Subcategorías</h2>
+                    <p class="text-xs text-slate-500 font-medium">Inclusión dentro de la misma categoría (OR) • Exclusión entre categorías diferentes (AND)</p>
+                </div>
+            </div>
+
+            <!-- Checkbox General para Ver Todos -->
+            <label for="check-todos" class="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 hover:bg-brand-100 rounded-xl border border-brand-200 cursor-pointer transition select-none">
+                <input type="checkbox" id="check-todos" checked class="w-4 h-4 text-brand-600 rounded focus:ring-brand-500 cursor-pointer">
+                <span class="text-xs sm:text-sm font-black text-brand-700">Ver Todos los Artículos</span>
+            </label>
+        </div>
+
+        <!-- Fila de Grupos: 3 Categorías con 3 Subcategorías cada una -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
             
-            <!-- Botones del menú con identificadores únicos id y atributos data-categoria -->
-            <button id="btn-todas" class="btn-categoria px-3.5 py-1 text-xs sm:text-sm font-bold bg-brand-600 text-white rounded-full transition" data-categoria="todas">
-                Todas
-            </button>
-            <button id="btn-vacunacion" class="btn-categoria px-3.5 py-1 text-xs sm:text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-full transition" data-categoria="vacunacion">
-                Vacunación
-            </button>
-            <button id="btn-dental" class="btn-categoria px-3.5 py-1 text-xs sm:text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-full transition" data-categoria="dental">
-                Salud Dental
-            </button>
-            <button id="btn-alerta" class="btn-categoria px-3.5 py-1 text-xs sm:text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-full transition" data-categoria="alerta">
-                Alertas
-            </button>
-            <button id="btn-jornadas" class="btn-categoria px-3.5 py-1 text-xs sm:text-sm font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-full transition" data-categoria="jornadas">
-                Jornadas
-            </button>
+            <!-- DIVISIÓN 1: Tipo de Atención / Especialidad -->
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-stethoscope text-brand-600"></i> 1. Tipo de Atención
+                </h3>
+                <div class="space-y-1.5">
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-vacunacion" class="w-4 h-4 text-brand-600 rounded focus:ring-brand-500 cursor-pointer">
+                        <span>Vacunación</span>
+                    </label>
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-dental" class="w-4 h-4 text-brand-600 rounded focus:ring-brand-500 cursor-pointer">
+                        <span>Salud Dental</span>
+                    </label>
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-alerta" class="w-4 h-4 text-brand-600 rounded focus:ring-brand-500 cursor-pointer">
+                        <span>Alertas y Preventiva</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- DIVISIÓN 2: Población Dirigida -->
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-users text-purple-600"></i> 2. Población Objetivo
+                </h3>
+                <div class="space-y-1.5">
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-infantil" class="w-4 h-4 text-purple-600 rounded focus:ring-purple-500 cursor-pointer">
+                        <span>Infantil y Escolar</span>
+                    </label>
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-adultos" class="w-4 h-4 text-purple-600 rounded focus:ring-purple-500 cursor-pointer">
+                        <span>Adultos y Trabajadores</span>
+                    </label>
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-mayor" class="w-4 h-4 text-purple-600 rounded focus:ring-purple-500 cursor-pointer">
+                        <span>Adultos Mayores</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- DIVISIÓN 3: Modalidad de Atención -->
+            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-emerald-600"></i> 3. Modalidad / Sede
+                </h3>
+                <div class="space-y-1.5">
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-clinica" class="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500 cursor-pointer">
+                        <span>Unidad Médica Fija</span>
+                    </label>
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-brigada" class="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500 cursor-pointer">
+                        <span>Brigada Móvil / Parques</span>
+                    </label>
+                    <label class="flex items-center gap-2 text-slate-700 font-medium cursor-pointer hover:text-slate-900 select-none">
+                        <input type="checkbox" id="check-escuela" class="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500 cursor-pointer">
+                        <span>Planteles Escolares</span>
+                    </label>
+                </div>
+            </div>
+
         </div>
-        <div class="text-xs sm:text-sm font-bold text-slate-500">
-            Actualizaciones oficiales del sector salud
-        </div>
+
     </div>
 </div>
 
+<!-- ==================================================================== -->
+<!-- CATÁLOGO DE ARTÍCULOS CON CLASES DE SUBCATEGORÍAS ASIGNADAS          -->
+<!-- ==================================================================== -->
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
     
-    <!-- ============================================================== -->
-    <!-- CATEGORÍA 1: VACUNACIÓN (Artículo 1 - Banner Destacado)        -->
-    <!-- ============================================================== -->
-    <div class="articulo vacunacion bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 rounded-2xl overflow-hidden shadow-xl text-white" data-categoria="vacunacion">
+    <!-- Artículo 1 (Banner Destacado): Vacunación + Adultos Mayores + Clínica Fija -->
+    <div class="articulo sub-vacunacion sub-mayor sub-clinica bg-gradient-to-r from-amber-500 via-amber-600 to-orange-600 rounded-2xl overflow-hidden shadow-xl text-white" data-categoria="vacunacion">
         <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             <div class="p-8 lg:p-12 lg:col-span-7 space-y-4">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/25 text-white text-xs sm:text-sm font-black uppercase tracking-wider">
-                    <i class="fa-solid fa-bullhorn animate-bounce"></i> Campaña Prioritaria Activa
+                <div class="flex flex-wrap gap-2 items-center">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/25 text-white text-xs font-black uppercase tracking-wider">
+                        <i class="fa-solid fa-bullhorn"></i> Campaña Prioritaria
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-bold">Adultos Mayores</span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-white/20 text-white text-xs font-bold">Clínica Fija</span>
                 </div>
                 <h2 class="text-2xl sm:text-4xl font-black leading-tight">
                     Jornada Nacional de Vacunación contra Influenza, COVID-19 y Neumococo
@@ -83,26 +155,26 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-articulos">
         
         <!-- ========================================================== -->
-        <!-- CATEGORÍA 1: VACUNACIÓN (Artículos 2 al 5)                 -->
+        <!-- CATEGORÍA: VACUNACIÓN (Artículos 2 al 5)                   -->
         <!-- ========================================================== -->
         
-        <!-- Vacunación 2 -->
-        <article class="articulo vacunacion bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
+        <!-- Artículo 2: Vacunación + Infantil + Clínica Fija -->
+        <article class="articulo sub-vacunacion sub-infantil sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/vacunacion2.jpg') }}" alt="Vacunación Infantil" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-amber-50 text-amber-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Esquema Básico</span>
-                        <span class="text-slate-400 font-semibold">Lunes a Viernes</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Módulos de Refuerzo de Cartilla Infantil Nacional
                     </h3>
                     <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
-                        Aplicación continua de vacunas hexavalente, rotavirus y triple viral (SRP) para menores de 6 años sin necesidad de cita previa.
+                        Aplicación continua de vacunas hexavalente, rotavirus y triple viral (SRP) para menores de 6 años en las 8 unidades médicas.
                     </p>
                 </div>
             </div>
@@ -112,17 +184,17 @@
             </div>
         </article>
 
-        <!-- Vacunación 3 -->
-        <article class="articulo vacunacion bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
+        <!-- Artículo 3: Vacunación + Infantil + Escuelas -->
+        <article class="articulo sub-vacunacion sub-infantil sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/vacunacion3.jpg') }}" alt="Vacunación VPH" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-amber-50 text-amber-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Prevención Escolar</span>
-                        <span class="text-slate-400 font-semibold">Esta Semana</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil / Escolar</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Campaña de Vacunación contra el Virus del Papiloma Humano (VPH)
@@ -138,17 +210,17 @@
             </div>
         </article>
 
-        <!-- Vacunación 4 -->
-        <article class="articulo vacunacion bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
+        <!-- Artículo 4: Vacunación + Adultos + Brigada Móvil -->
+        <article class="articulo sub-vacunacion sub-adultos sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/vacunacion4.jpg') }}" alt="Vacunación Antirrábica" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-amber-50 text-amber-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Zoonosis</span>
-                        <span class="text-slate-400 font-semibold">Fin de semana</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos y Familias</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Jornada Municipal de Vacunación Antirrábica Canina y Felina
@@ -164,17 +236,17 @@
             </div>
         </article>
 
-        <!-- Vacunación 5 -->
-        <article class="articulo vacunacion bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
+        <!-- Artículo 5: Vacunación + Adultos + Clínica Fija -->
+        <article class="articulo sub-vacunacion sub-adultos sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/vacunacion5.jpg') }}" alt="Vacunación Adultos" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-amber-50 text-amber-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Salud Ocupacional</span>
-                        <span class="text-slate-400 font-semibold">Permanente</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Dosis de Refuerzo de Tétanos y Hepatitis B para Adultos
@@ -192,20 +264,20 @@
 
 
         <!-- ========================================================== -->
-        <!-- CATEGORÍA 2: SALUD DENTAL (5 Artículos)                    -->
+        <!-- CATEGORÍA: SALUD DENTAL (5 Artículos)                      -->
         <!-- ========================================================== -->
 
-        <!-- Dental 1 -->
-        <article class="articulo dental bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
+        <!-- Artículo 6: Dental + Infantil + Escuelas -->
+        <article class="articulo sub-dental sub-infantil sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/noticia2.jpg') }}" alt="Brigada de Salud Bucal" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-teal-50 text-teal-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Odontología Infantil</span>
-                        <span class="text-slate-400 font-semibold">Hace 2 días</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil / Escolar</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Semana de Detección y Prevención de Caries en Escuelas Primarias
@@ -221,17 +293,17 @@
             </div>
         </article>
 
-        <!-- Dental 2 -->
-        <article class="articulo dental bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
+        <!-- Artículo 7: Dental + Adultos Mayores + Clínica Fija -->
+        <article class="articulo sub-dental sub-mayor sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/dental2.jpg') }}" alt="Limpiezas Dentales" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-teal-50 text-teal-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Ultrasonido</span>
-                        <span class="text-slate-400 font-semibold">Hace 5 días</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Mayores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Programa de Limpiezas Dentales con Ultrasonido y Resinas Sin Costo
@@ -247,23 +319,23 @@
             </div>
         </article>
 
-        <!-- Dental 3 -->
-        <article class="articulo dental bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
+        <!-- Artículo 8: Dental + Infantil + Brigada Móvil -->
+        <article class="articulo sub-dental sub-infantil sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/dental3.jpg') }}" alt="Técnica de Cepillado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-teal-50 text-teal-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Educación Bucal</span>
-                        <span class="text-slate-400 font-semibold">Miércoles</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil y Familias</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Talleres Prácticos de Técnica Correcta de Cepillado y Uso de Hilo Dental
                     </h3>
                     <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
-                        Charlas demostrativas en salas de espera sobre hábitos de higiene bucal, uso de enjuagues y nutrición libre de azúcares cariogénicos.
+                        Charlas demostrativas en plazas públicas sobre higiene bucal, uso de enjuagues y nutrición libre de azúcares cariogénicos.
                     </p>
                 </div>
             </div>
@@ -273,17 +345,17 @@
             </div>
         </article>
 
-        <!-- Dental 4 -->
-        <article class="articulo dental bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
+        <!-- Artículo 9: Dental + Adultos + Clínica Fija -->
+        <article class="articulo sub-dental sub-adultos sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/dental4.jpg') }}" alt="Cirugía Bucal" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-teal-50 text-teal-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Urgencias Dentales</span>
-                        <span class="text-slate-400 font-semibold">Horario Ampliado</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Jornada de Extracciones Simples y Alivio del Dolor Dental Agudo
@@ -299,17 +371,17 @@
             </div>
         </article>
 
-        <!-- Dental 5 -->
-        <article class="articulo dental bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
+        <!-- Artículo 10: Dental + Adultos Mayores + Clínica Fija -->
+        <article class="articulo sub-dental sub-mayor sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/dental5.jpg') }}" alt="Periodoncia" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-teal-50 text-teal-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Periodoncia</span>
-                        <span class="text-slate-400 font-semibold">Mes de la Salud</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Mayores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Diagnóstico Oportuno de Gingivitis y Enfermedad Periodontal en Diabéticos
@@ -327,20 +399,20 @@
 
 
         <!-- ========================================================== -->
-        <!-- CATEGORÍA 3: ALERTAS SANITARIAS (5 Artículos)              -->
+        <!-- CATEGORÍA: ALERTAS Y MEDICINA PREVENTIVA (10 Artículos)    -->
         <!-- ========================================================== -->
 
-        <!-- Alerta 1 -->
-        <article class="articulo alerta bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
+        <!-- Artículo 11: Alerta + Adultos + Brigada Móvil -->
+        <article class="articulo sub-alerta sub-adultos sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/noticia3.jpg') }}" alt="Alerta Dengue" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-red-50 text-red-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Alerta Sanitaria</span>
-                        <span class="text-slate-400 font-semibold">Hace 4 días</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos / Hogares</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Recomendaciones para Evitar Criaderos de Mosquitos del Dengue
@@ -356,17 +428,17 @@
             </div>
         </article>
 
-        <!-- Alerta 2 -->
-        <article class="articulo alerta bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
+        <!-- Artículo 12: Alerta + Adultos Mayores + Clínica Fija -->
+        <article class="articulo sub-alerta sub-mayor sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/alerta2.jpg') }}" alt="Alerta Bajas Temperaturas" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-red-50 text-red-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Frente Frío</span>
-                        <span class="text-slate-400 font-semibold">Aviso Activo</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Mayores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Aviso por Descenso Térmico e Infecciones Respiratorias Agudas
@@ -382,23 +454,23 @@
             </div>
         </article>
 
-        <!-- Alerta 3 -->
-        <article class="articulo alerta bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
+        <!-- Artículo 13: Alerta + Adultos + Brigada Móvil -->
+        <article class="articulo sub-alerta sub-adultos sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/alerta3.jpg') }}" alt="Golpe de Calor" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-red-50 text-red-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Hidratación</span>
-                        <span class="text-slate-400 font-semibold">Temporada Cálida</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos y Trabajadores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Aviso Preventivo: Síntomas y Manejo Inmediato del Golpe de Calor
                     </h3>
                     <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
-                        Distribución gratuita de sobres de Vida Suero Oral en todas las clínicas comunitarias y recomendaciones de hidratación permanente.
+                        Distribución gratuita de sobres de Vida Suero Oral en módulos móviles comunitarios y recomendaciones de hidratación permanente.
                     </p>
                 </div>
             </div>
@@ -408,23 +480,23 @@
             </div>
         </article>
 
-        <!-- Alerta 4 -->
-        <article class="articulo alerta bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
+        <!-- Artículo 14: Alerta + Adultos + Planteles Escolares -->
+        <article class="articulo sub-alerta sub-adultos sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/alerta4.jpg') }}" alt="Higiene del Agua" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-red-50 text-red-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Inocuidad</span>
-                        <span class="text-slate-400 font-semibold">Aviso Sanitario</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos / Familias</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Protocolo de Cloración de Agua y Desinfección de Alimentos Crudos
                     </h3>
                     <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
-                        Medidas para prevenir brotes de salmonelosis y cólera en época de calor: hervir agua de consumo y lavar minuciosamente frutas y legumbres.
+                        Talleres en cooperativas escolares para prevenir brotes de salmonelosis y cólera: hervir agua de consumo y lavar minuciosamente alimentos.
                     </p>
                 </div>
             </div>
@@ -434,23 +506,23 @@
             </div>
         </article>
 
-        <!-- Alerta 5 -->
-        <article class="articulo alerta bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
+        <!-- Artículo 15: Alerta + Infantil + Planteles Escolares -->
+        <article class="articulo sub-alerta sub-infantil sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/alerta5.jpg') }}" alt="Calidad del Aire" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-red-50 text-red-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Medio Ambiente</span>
-                        <span class="text-slate-400 font-semibold">Actual</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Alerta Ambiental por Calidad del Aire y Protección para Pacientes Asmáticos
                     </h3>
                     <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
-                        Recomendación de suspensión de actividades cívicas al aire libre para grupos vulnerables y disponibilidad de inhaladores en salas de urgencias.
+                        Recomendación de suspensión de actividades cívicas al aire libre en escuelas para niños vulnerables y disponibilidad de inhaladores.
                     </p>
                 </div>
             </div>
@@ -460,22 +532,17 @@
             </div>
         </article>
 
-
-        <!-- ========================================================== -->
-        <!-- CATEGORÍA 4: JORNADAS ESPECIALES (5 Artículos)             -->
-        <!-- ========================================================== -->
-
-        <!-- Jornadas 1 -->
-        <article class="articulo jornadas bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas">
+        <!-- Artículo 16: Alerta + Adultos Mayores + Brigada Móvil -->
+        <article class="articulo sub-alerta sub-mayor sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/noticia4.jpg') }}" alt="Salud Visual" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-emerald-50 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Jornada Especial</span>
-                        <span class="text-slate-400 font-semibold">Hace 1 semana</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Mayores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Próxima Jornada de Salud Visual: Examen de la Vista y Lentes
@@ -491,17 +558,17 @@
             </div>
         </article>
 
-        <!-- Jornadas 2 -->
-        <article class="articulo jornadas bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas">
+        <!-- Artículo 17: Alerta + Adultos + Brigada Móvil -->
+        <article class="articulo sub-alerta sub-adultos sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/jornadas2.jpg') }}" alt="Mastografías" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-emerald-50 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Salud de la Mujer</span>
-                        <span class="text-slate-400 font-semibold">Próximo Sábado</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos / Mujeres</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Feria de Mastografías Gratuitas y Detección de Cáncer de Mama
@@ -517,23 +584,23 @@
             </div>
         </article>
 
-        <!-- Jornadas 3 -->
-        <article class="articulo jornadas bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas">
+        <!-- Artículo 18: Vacunación + Adultos Mayores + Brigada Móvil -->
+        <article class="articulo sub-vacunacion sub-mayor sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/jornadas3.jpg') }}" alt="Brigada Rural" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-emerald-50 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Caravana Móvil</span>
-                        <span class="text-slate-400 font-semibold">Domingo</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Mayores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Brigada Médica Rural en Ejidos y Zonas Comunitarias Alejadas
                     </h3>
                     <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
-                        Consultas de medicina familiar, entrega gratuita de fármacos de cuadro básico y canalizaciones a especialistas hospitalarios.
+                        Consultas de medicina familiar, vacunación geriátrica y entrega gratuita de fármacos de cuadro básico en unidades móviles.
                     </p>
                 </div>
             </div>
@@ -543,17 +610,17 @@
             </div>
         </article>
 
-        <!-- Jornadas 4 -->
-        <article class="articulo jornadas bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas">
+        <!-- Artículo 19: Alerta + Adultos Mayores + Clínica Fija -->
+        <article class="articulo sub-alerta sub-mayor sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/jornadas4.jpg') }}" alt="Detección Diabetes" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-emerald-50 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Enfermedades Crónicas</span>
-                        <span class="text-slate-400 font-semibold">Jueves</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Mayores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Jornada de Detección Temprana de Diabetes e Hipertensión Arterial
@@ -569,23 +636,23 @@
             </div>
         </article>
 
-        <!-- Jornadas 5 -->
-        <article class="articulo jornadas bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas">
+        <!-- Artículo 20: Alerta + Infantil + Planteles Escolares -->
+        <article class="articulo sub-alerta sub-infantil sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta">
             <div>
                 <div class="h-52 overflow-hidden relative">
                     <img src="{{ asset('img/noticias/jornadas5.jpg') }}" alt="Salud Mental" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
                 </div>
                 <div class="p-6">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                        <span class="bg-emerald-50 text-emerald-800 font-black px-2.5 py-0.5 rounded-full uppercase text-[11px]">Bienestar Emocional</span>
-                        <span class="text-slate-400 font-semibold">Viernes</span>
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil y Jóvenes</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
                         Jornada de Salud Emocional y Talleres de Manejo de Ansiedad y Duelo
                     </h3>
                     <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
-                        Sesiones de orientación psicológica comunitaria, círculos de apoyo emocional y prevención de adicciones para jóvenes y adultos.
+                        Sesiones de orientación psicológica comunitaria, círculos de apoyo emocional y prevención de adicciones en secundarias.
                     </p>
                 </div>
             </div>
@@ -599,6 +666,6 @@
 
 </div>
 
-<!-- Enlace al archivo JavaScript externo de la Actividad 13 -->
-<script src="{{ asset('js/categorias.js') }}"></script>
+<!-- Enlace al archivo JavaScript externo de la Actividad de Subcategorías -->
+<script src="{{ asset('js/subcategorias.js') }}"></script>
 @endsection
