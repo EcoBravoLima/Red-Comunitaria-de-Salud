@@ -1,70 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Red Comunitaria de Salud Pública
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema web integral para la gestión y difusión de servicios médicos comunitarios, directorio de unidades de salud, agenda de citas, y catálogo interactivo de comunicados y alertas epidemiológicas.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 Actividades del Proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Actividad 13: JavaScript, Categorías (Catálogo Interactivo)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Implementación de un sistema de filtrado dinámico por categorías para los comunicados, campañas y alertas de salud comunitaria, desarrollado desde cero con **JavaScript Vanilla** bajo lineamientos pedagógicos de manipulación del DOM y arquitectura basada en eventos nativos.
 
-## Learning Laravel
+#### 🎯 Requerimientos Técnicos Cumplidos:
+- **Menú con `id` único:** Cada botón de categoría posee un identificador único en el DOM (`btn-todas`, `btn-vacunacion`, `btn-dental`, `btn-alerta`, `btn-jornadas`).
+- **Enlace a componentes mediante `getElementById`:** Captura directa de los elementos interactivos del menú.
+- **Enlace a divisiones mediante `getElementsByClassName`:** Selección de las tarjetas de artículos mediante su clase general (`articulo`) y su clase temática (`vacunacion`, `dental`, `alerta`, `jornadas`).
+- **Gestión de visibilidad con `classList.add` y `classList.remove`:** Ocultamiento y visualización de artículos aplicando o removiendo la clase utilitaria `hidden`.
+- **Uso de atributos `data-`:** Validación semántica en cada tarjeta mediante `data-categoria="..."` leído con `.getAttribute("data-categoria")`.
+- **Eventos con `addEventListener`:** Asignación desacoplada de eventos `click` a cada botón del menú, eliminando llamadas inline en HTML.
+- **Funciones explícitas:** Funciones dedicadas para cada acción (`mostrarTodos`, `filtrarVacunacion`, `filtrarDental`, `filtrarAlerta`, `filtrarJornadas`, `ocultarTodosLosArticulos`).
+- **Sin base de datos:** El catálogo funciona de forma reactiva y rápida en el lado del cliente (Front-End).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### 🗂️ Archivos Principales de la Actividad:
+- `resources/views/noticias.blade.php`: Vista Blade del catálogo con 20 comunicados oficiales (5 artículos por categoría).
+- `public/js/categorias.js`: Archivo JavaScript con la lógica de control del DOM y filtrado por eventos.
+- `public/img/noticias/`: 20 fotografías temáticas originales de alta calidad asignadas a cada comunicado.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Actividad 12: Acordeón Interactivo de Preguntas Frecuentes (FAQ)
+- `resources/views/preguntas.blade.php`: Vista interactiva con acordeón desplegable.
+- `public/js/preguntas.js`: Control de visibilidad con `getElementById`, `addEventListener` y `classList.toggle`.
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 🚀 Instalación y Ejecución Local
 
-### Premium Partners
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/EcoBravoLima/Red-Comunitaria-de-Salud.git
+   cd Red-Comunitaria-de-Salud
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+2. Instalar dependencias de PHP con Composer:
+   ```bash
+   composer install
+   ```
 
-## Contributing
+3. Iniciar el servidor local de desarrollo:
+   - Mediante el script automático:
+     ```cmd
+     iniciar_servidor.bat
+     ```
+   - O mediante Artisan:
+     ```bash
+     php artisan serve
+     ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Abrir en el navegador:
+   - Catálogo de Noticias y Categorías: `http://127.0.0.1:8000/noticias`
+   - Preguntas Frecuentes: `http://127.0.0.1:8000/preguntas`
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🔒 Requisitos del Entorno
+- **PHP:** 8.2+ o 8.3+ (recomendado PHP 8.3.36+ con mitigación CVE-2024-4577).
+- **Laravel Framework:** 10.x
+- **Tailwind CSS & FontAwesome:** Integrados vía CDN.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## Security & Requirements
-
-El entorno de ejecución requiere **PHP 8.2+ o PHP 8.3+** (recomendado PHP 8.3.36+) con parches para mitigar CVE-2024-4577. Para más información técnica y directrices de hardening, consultar [SECURITY.md](SECURITY.md).
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📄 Licencia
+Este proyecto es software de código abierto bajo la licencia [MIT](LICENSE).
