@@ -39,6 +39,68 @@ A continuación se detalla la evolución pedagógica y técnica del proyecto a l
 | **Act. 12** | **JavaScript Básico: Acordeón Interactivo (FAQ)** | Implementación de interacción con JavaScript nativo en `preguntas.blade.php` y `public/js/preguntas.js`: acordeón de preguntas frecuentes utilizando enlace de elementos por `getElementById`, asignación de eventos con `addEventListener` y alternancia de visibilidad mediante `classList.toggle("hidden")`. |
 | **Act. 13** | **JavaScript: Filtrado por Categorías** | Implementación de un catálogo dinámico en `noticias.blade.php` con 20 comunicados oficiales (5 por categoría). Filtrado en cliente con `public/js/categorias.js` empleando `getElementById`, `getElementsByClassName`, manipulación de `classList.add/remove`, validación con atributos `data-categoria` y funciones explícitas sin base de datos. |
 | **Act. 14** | **JavaScript: Subcategorías con Checkboxes** | Filtrado avanzado con 3 categorías principales y 3 subcategorías cada una mediante checkboxes. Implementa reglas de **inclusión (OR)** dentro de la misma categoría y **exclusión (AND)** entre categorías diferentes utilizando `getElementById`, `getElementsByClassName`, `classList.add/remove` y `addEventListener`. |
+| **Act. 15** | **JavaScript: Buscador de Productos por Nombre** | Implementación de un buscador interactivo en tiempo real en `noticias.blade.php` y `public/js/buscador.js`: enlace a componentes mediante `getElementById`, enlace a divisiones mediante `getElementsByClassName`, captura de eventos `input` y `keyup` con `addEventListener`, control de visibilidad mediante `style.display` y clases CSS, funciones explícitas para cada acción y búsqueda por clases asociadas al nombre de cada producto sin base de datos. |
+
+---
+
+## 🔬 Detalle Técnico de la Actividad 15: JavaScript - Buscador de Productos por Nombre
+
+La **Actividad 15** introduce un motor de búsqueda interactivo en tiempo real en la vista de catálogo (`noticias.blade.php`) desarrollado completamente desde cero con **JavaScript Vanilla**, sin depender de librerías externas ni de bases de datos:
+
+### 1. Requerimientos Pedagógicos Cumplidos
+* **Respaldo de archivos:** Se crearon copias de seguridad de la actividad anterior (`noticias_respaldo_act14.blade.php` y `subcategorias_respaldo.js`).
+* **Enlace a componentes mediante `ById`:**
+  - `inputBusqueda = document.getElementById("input-busqueda")`
+  - `btnLimpiar = document.getElementById("btn-limpiar")`
+  - `contadorResultados = document.getElementById("contador-resultados")`
+  - `mensajeSinResultados = document.getElementById("mensaje-sin-resultados")`
+* **Enlace a divisiones mediante `ClassName`:**
+  - `divisionesProductos = document.getElementsByClassName("producto")`
+* **Definición de clases según el nombre de los productos:**
+  Cada tarjeta cuenta con su clase de categoría (`vacunacion`, `dental`, `alerta`, `jornadas`) y clases derivadas del nombre y términos clave de cada producto:
+  - `prod-influenza`, `influenza`, `covid`, `neumococo`
+  - `prod-cartilla-infantil`, `cartilla`, `infantil`, `hexavalente`, `rotavirus`
+  - `prod-vph`, `vph`, `papiloma`, `escolar`
+  - `prod-antirrabica`, `antirrabica`, `canina`, `felina`, `mascotas`
+  - `prod-tetanos-hepatitis`, `tetanos`, `hepatitis`
+  - `prod-caries-infantil`, `caries`, `fluor`, `dental`
+  - `prod-limpieza-ultrasonido`, `limpieza`, `ultrasonido`, `resinas`
+  - `prod-cepillado-bucal`, `cepillado`, `higiene`, `bucal`
+  - `prod-extraccion-dental`, `extraccion`, `odontalgia`, `dolor`
+  - `prod-gingivitis-periodoncia`, `gingivitis`, `periodoncia`, `encias`
+  - `prod-dengue-zika`, `dengue`, `zika`, `chikungunya`, `criaderos`
+  - `prod-infecciones-respiratorias`, `respiratorias`, `termico`, `frio`
+  - `prod-golpe-de-calor`, `calor`, `insolacion`, `deshidratacion`
+  - `prod-cloracion-agua`, `agua`, `cloracion`, `desinfeccion`
+  - `prod-calidad-aire`, `aire`, `calidad`, `ambiental`, `asma`
+  - `prod-salud-visual`, `visual`, `ojos`, `lentes`, `optometria`
+  - `prod-mastografia`, `mastografia`, `cancer`, `mama`
+  - `prod-brigada-rural`, `rural`, `ejidos`, `comunidades`, `brigada`
+  - `prod-diabetes-hipertension`, `diabetes`, `hipertension`, `glucosa`
+  - `prod-salud-emocional`, `emocional`, `psicologia`, `ansiedad`, `duelo`
+* **Ocultar y mostrar con `style.display` y clases CSS:**
+  ```javascript
+  // Ocultar división
+  division.style.display = "none";
+  division.classList.add("hidden");
+
+  // Mostrar división
+  division.style.display = "";
+  division.classList.remove("hidden");
+  ```
+* **Funciones explícitas para cada acción:**
+  - `buscarProductos()`
+  - `mostrarDivision(division)`
+  - `ocultarDivision(division)`
+  - `mostrarTodosLosProductos()`
+  - `actualizarContador(visibles, total)`
+  - `limpiarBusqueda()`
+  - `buscarSugerencia(termino)`
+* **Eventos mediante `addEventListener`:**
+  - `inputBusqueda.addEventListener("input", buscarProductos)`
+  - `inputBusqueda.addEventListener("keyup", buscarProductos)`
+  - `btnLimpiar.addEventListener("click", limpiarBusqueda)`
+
 
 ---
 
@@ -147,7 +209,9 @@ Red-Comunitaria-de-Salud/
 │   └── js/
 │       ├── preguntas.js         # Lógica de la Actividad 12 (Acordeón FAQ)
 │       ├── categorias.js        # Lógica de la Actividad 13 (Filtrado de Catálogo)
-│       └── noticias.js          # Espejo sincronizado de categorias.js
+│       ├── subcategorias.js     # Lógica de la Actividad 14 (Checkboxes de Subcategorías)
+│       ├── subcategorias_respaldo.js # Respaldo técnico de la Actividad 14
+│       └── buscador.js          # Lógica de la Actividad 15 (Buscador por Nombre y Clases)
 ├── resources/
 │   └── views/
 │       ├── layouts/
@@ -161,7 +225,8 @@ Red-Comunitaria-de-Salud/
 │       ├── contacto.blade.php   # Act. 10 - Buzón ciudadano y contacto
 │       ├── nosotros.blade.php   # Act. 11 - Misión, visión e identidad
 │       ├── preguntas.blade.php  # Act. 12 - Centro de Ayuda interactivo (FAQ)
-│       └── noticias.blade.php   # Act. 13 - Catálogo interactivo de comunicados
+│       ├── noticias_respaldo_act14.blade.php # Respaldo técnico de la Actividad 14
+│       └── noticias.blade.php   # Act. 15 - Catálogo interactivo con buscador de productos
 ├── routes/
 │   └── web.php                  # Enrutador HTTP de vistas Laravel
 ├── iniciar_servidor.bat         # Script de arranque rápido en Windows
