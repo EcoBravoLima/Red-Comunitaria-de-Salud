@@ -36,7 +36,7 @@
             <!-- Contador de Resultados Visibles -->
             <div class="flex items-center gap-2">
                 <span class="px-4 py-2 bg-white/10 backdrop-blur rounded-xl border border-white/20 text-xs sm:text-sm font-black text-white flex items-center gap-2" id="contador-resultados">
-                    <i class="fa-solid fa-layer-group text-accent-500"></i> Mostrando 20 de 20 productos
+                    <i class="fa-solid fa-layer-group text-accent-500"></i> Mostrando 40 de 40 productos
                 </span>
             </div>
         </div>
@@ -71,6 +71,13 @@
             <button type="button" onclick="buscarSugerencia('mastografia')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Mastografía</button>
             <button type="button" onclick="buscarSugerencia('vph')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">VPH</button>
             <button type="button" onclick="buscarSugerencia('limpieza')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Limpieza Dental</button>
+            <button type="button" onclick="buscarSugerencia('prostata')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Próstata</button>
+            <button type="button" onclick="buscarSugerencia('papanicolaou')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Papanicolaou</button>
+            <button type="button" onclick="buscarSugerencia('nutricion')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Nutrición</button>
+            <button type="button" onclick="buscarSugerencia('rickettsia')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Rickettsia</button>
+            <button type="button" onclick="buscarSugerencia('neumococo')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Neumococo</button>
+            <button type="button" onclick="buscarSugerencia('protesis')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Prótesis</button>
+            <button type="button" onclick="buscarSugerencia('auxilios')" class="px-3 py-1 bg-white/10 hover:bg-white/20 rounded-lg text-slate-200 hover:text-white transition cursor-pointer">Primeros Auxilios</button>
         </div>
 
     </div>
@@ -631,6 +638,545 @@
             </div>
             <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
                 <span class="text-slate-500"><i class="fa-solid fa-brain mr-1 text-emerald-600"></i> Psicología</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- ========================================================== -->
+        <!-- CATEGORÍA: VACUNACIÓN ADICIONAL (Artículos 21 al 25)       -->
+        <!-- ========================================================== -->
+
+        <!-- Artículo 21: Vacunación + Adultos Mayores + Clínica Fija -->
+        <article class="articulo producto vacunacion prod-neumococo neumococo pulmonar neumonia vacuna adultos mayores geriatria sub-vacunacion sub-mayor sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion" data-nombre="Aplicación Gratuita de la Vacuna Neumocócica para Mayores de 60 Años">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/vacunacion_neumococo.jpg') }}" alt="Vacunación Neumococo" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Mayores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Aplicación Gratuita de la Vacuna Neumocócica para Mayores de 60 Años
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Protección contra neumonía bacteriana y meningitis para adultos mayores y personas con enfermedades pulmonares crónicas en las 8 clínicas.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-syringe mr-1 text-amber-500"></i> Neumología</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 22: Vacunación + Infantil + Escuelas -->
+        <article class="articulo producto vacunacion prod-sarampion sarampion rubeola parotiditis srp refuerzo escolar ninos sub-vacunacion sub-infantil sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion" data-nombre="Campaña Intensiva de Vacunación contra Sarampión y Rubéola en Escuelas">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/vacunacion_sarampion.jpg') }}" alt="Vacunación Sarampión" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil y Escolar</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Campaña Intensiva de Vacunación contra Sarampión y Rubéola en Escuelas
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Brigadas médicas aplican refuerzos de vacuna SRP y SR en guarderías y preescolares municipales para garantizar cobertura del 100%.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-shield-virus mr-1 text-amber-500"></i> Salud Infantil</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 23: Vacunación + Infantil + Clínica Fija -->
+        <article class="articulo producto vacunacion prod-rotavirus rotavirus diarrea deshidratacion lactantes bebes pediatria sub-vacunacion sub-infantil sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion" data-nombre="Inmunización contra Rotavirus y Diarreas Agudas para Lactantes">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/vacunacion_rotavirus.jpg') }}" alt="Vacuna Rotavirus" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Lactantes y Bebés</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Inmunización contra Rotavirus y Diarreas Agudas para Lactantes
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Dosis oral para recién nacidos de 2 a 7 meses para prevenir gastroenteritis graves, disponible diariamente en módulos de medicina preventiva.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-baby mr-1 text-amber-500"></i> Pediatría</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 24: Vacunación + Adultos + Clínica Fija -->
+        <article class="articulo producto vacunacion prod-tosferina tosferina tdpa embarazadas maternidad materna prenatal gestacion sub-vacunacion sub-adultos sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion" data-nombre="Aplicación de Vacuna Tdpa para Mujeres Embarazadas a partir de la Semana 20">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/vacunacion_tosferina.jpg') }}" alt="Vacuna Embarazadas" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Salud Materna</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Aplicación de Vacuna Tdpa para Mujeres Embarazadas a partir de la Semana 20
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Inmunización prenatal contra tétanos, difteria y tos ferina que transfiere anticuerpos protectores al bebé antes del nacimiento.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-person-pregnant mr-1 text-amber-500"></i> Ginecología</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 25: Vacunación + Adultos + Brigada Móvil -->
+        <article class="articulo producto vacunacion prod-hepatitis hepatitis higado hepatico alimentos manipuladores comerciantes sub-vacunacion sub-adultos sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="vacunacion" data-nombre="Jornada Extraordinaria de Inmunización contra Hepatitis A y B en Mercados">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/vacunacion_hepatitis.jpg') }}" alt="Vacuna Hepatitis" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Vacunación</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos y Comerciantes</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Jornada Extraordinaria de Inmunización contra Hepatitis A y B en Mercados
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Atención directa a manejadores de alimentos, carniceros y comerciantes de mercados municipales con esquemas completos de protección hepática.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-syringe mr-1 text-amber-500"></i> Regulación Sanitaria</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+
+        <!-- ========================================================== -->
+        <!-- CATEGORÍA: SALUD DENTAL ADICIONAL (Artículos 26 al 30)     -->
+        <!-- ========================================================== -->
+
+        <!-- Artículo 26: Dental + Infantil + Escuelas -->
+        <article class="articulo producto dental prod-selladores selladores fosetas fisuras ninos caries molares esmalte sub-dental sub-infantil sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental" data-nombre="Programa de Selladores de Fosetas y Fisuras para Protección de Molares Infantiles">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/dental_selladores.jpg') }}" alt="Selladores Dentales" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Programa de Selladores de Fosetas y Fisuras para Protección de Molares Infantiles
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Colocación de barreras resinosas protectoras e indoloras sobre muelas permanentes recién erupcionadas para evitar formación de caries.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-tooth mr-1 text-teal-600"></i> Odontopediatría</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 27: Dental + Adultos Mayores + Clínica Fija -->
+        <article class="articulo producto dental prod-protesis protesis placas dentaduras postizas abuelitos mayores masticacion sub-dental sub-mayor sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental" data-nombre="Programa Municipal de Entrega de Prótesis Dentales y Placas para Adultos Mayores">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/dental_protesis.jpg') }}" alt="Prótesis Dentales" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Mayores</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Programa Municipal de Entrega de Prótesis Dentales y Placas para Adultos Mayores
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Toma de impresiones y elaboración sin costo de prótesis totales y removibles para devolver funcionalidad masticatoria y fonética a personas de la tercera edad.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-teeth-open mr-1 text-teal-600"></i> Prótesis y Rehabilitación</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 28: Dental + Adultos + Clínica Fija -->
+        <article class="articulo producto dental prod-bruxismo bruxismo mandibula dolor desgaste dental estres ferulas sub-dental sub-adultos sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental" data-nombre="Clínica de Detección de Bruxismo, Férulas Oclusales y Tensión Muscular">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/dental_bruxismo.jpg') }}" alt="Bruxismo y Férulas" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos y Jóvenes</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Clínica de Detección de Bruxismo, Férulas Oclusales y Tensión Muscular
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Diagnóstico para dolor de mandíbula por estrés, desgaste severo de esmalte y fabricación de guardas oclusales protectoras nocturnas.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-tooth mr-1 text-teal-600"></i> Fisioterapia Bucal</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 29: Dental + Adultos + Clínica Fija -->
+        <article class="articulo producto dental prod-flemones flemones abscesos infeccion celulitis antibacteriano dolor drenaje sub-dental sub-adultos sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental" data-nombre="Módulo de Urgencias Odontológicas: Flemones y Abscesos Dentales Agudos">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/dental_flemones.jpg') }}" alt="Urgencias Dentales" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Urgencias</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Módulo de Urgencias Odontológicas: Flemones y Abscesos Dentales Agudos
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Atención prioritaria 24 horas para drenaje de abscesos purulentos, inflamación maxilofacial y terapia con antibióticos intravenosos.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-kit-medical mr-1 text-teal-600"></i> Cirugía Maxilofacial</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 30: Dental + Infantil + Escuelas -->
+        <article class="articulo producto dental prod-ortodoncia ortodoncia mordida maloclusion frenillos chuparse dedo respiracion bucal sub-dental sub-infantil sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="dental" data-nombre="Detección Temprana de Maloclusiones y Ortodoncia Preventiva en Primarias">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/dental_ortodoncia.jpg') }}" alt="Ortodoncia Preventiva" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-teal-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Salud Dental</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Detección Temprana de Maloclusiones y Ortodoncia Preventiva en Primarias
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Evaluación diagnóstica en niños de 6 a 12 años para corregir apiñamiento dental, deglución atípica y hábitos de succión digital antes de requerir frenillos.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-tooth mr-1 text-teal-600"></i> Ortodoncia</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+
+        <!-- ========================================================== -->
+        <!-- CATEGORÍA: ALERTAS EPIDEMIOLÓGICAS (Artículos 31 al 35)    -->
+        <!-- ========================================================== -->
+
+        <!-- Artículo 31: Alerta + Adultos + Brigada Móvil -->
+        <article class="articulo producto alerta prod-rickettsia rickettsia garrapatas pulgas perros fiebre manchas desparasitacion sub-alerta sub-adultos sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta" data-nombre="Alerta Epidemiológica por Rickettsiosis y Fumigación contra Garrapatas">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/alerta_rickettsia.jpg') }}" alt="Alerta Rickettsia" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos y Mascotas</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Alerta Epidemiológica por Rickettsiosis y Fumigación contra Garrapatas
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Brigadas de fumigación en patios y aplicación gratuita de ectodesparasitante en perros para erradicar la garrapata café transmisora de rickettsia.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-bug mr-1 text-red-600"></i> Zoonosis y Vectores</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 32: Alerta + Infantil + Escuelas -->
+        <article class="articulo producto alerta prod-pediculosis pediculosis piojos liendres cabello escolar peines vinagre sub-alerta sub-infantil sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta" data-nombre="Campaña Escolar de Higiene Capilar y Erradicación de la Pediculosis">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/alerta_pediculosis.jpg') }}" alt="Pediculosis Escolar" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Infantil y Familias</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Campaña Escolar de Higiene Capilar y Erradicación de la Pediculosis
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Distribución de peines liendreros especiales y champú permetrina al 1% en primarias para el control seguro de infestaciones por piojos.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-child mr-1 text-red-600"></i> Salud Escolar</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 33: Alerta + Adultos + Brigada Móvil -->
+        <article class="articulo producto alerta prod-marea-roja marea roja mariscos pescados intoxicacion toxinas ostras moluscos sub-alerta sub-adultos sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta" data-nombre="Aviso Preventivo por Veda y Monitoreo de Toxinas Marinas en Pescados y Mariscos">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/alerta_marea_roja.jpg') }}" alt="Alerta Marea Roja" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Comerciantes / Familias</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Aviso Preventivo por Veda y Monitoreo de Toxinas Marinas en Pescados y Mariscos
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Inspección en restaurantes y pescaderías para evitar intoxicaciones paralizantes por toxina de marea roja. Se exhorta a consumir marisco cocido y certificado.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-fish mr-1 text-red-600"></i> Fomento Sanitario</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 34: Alerta + Adultos Mayores + Brigada Móvil -->
+        <article class="articulo producto alerta prod-chagas chagas chinche besucona parasito corazon rural techos sub-alerta sub-mayor sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta" data-nombre="Detección Temprana y Rociado Residual contra la Chinche del Mal de Chagas">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/alerta_chagas.jpg') }}" alt="Enfermedad de Chagas" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Comunidades Rurales</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Detección Temprana y Rociado Residual contra la Chinche del Mal de Chagas
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Toma de gotas gruesas de sangre y fumigación intradomiciliaria en techos de paja y adobe de ejidos rurales para erradicar el parásito Trypanosoma cruzi.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-heart-crack mr-1 text-red-600"></i> Parasitología</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 35: Alerta + Adultos + Clínica Fija -->
+        <article class="articulo producto alerta prod-tuberculosis tuberculosis tos flemas baciloscopia pulmones catarro cronica sub-alerta sub-adultos sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="alerta" data-nombre="Protocolo Municipal de Detección de Tuberculosis en Pacientes con Tos Mayor a 15 Días">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/alerta_tuberculosis.jpg') }}" alt="Detección Tuberculosis" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-red-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Alerta</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Protocolo Municipal de Detección de Tuberculosis en Pacientes con Tos Mayor a 15 Días
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Estudios gratuitos de flema (baciloscopia seriada) y radiografías de tórax en laboratorios clínicos municipales con tratamiento farmacológico TAES garantizado.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-lungs mr-1 text-red-600"></i> Neumología</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+
+        <!-- ========================================================== -->
+        <!-- CATEGORÍA: JORNADAS Y SALUD FAMILIAR (Artículos 36 al 40)  -->
+        <!-- ========================================================== -->
+
+        <!-- Artículo 36: Jornadas + Adultos Mayores + Clínica Fija -->
+        <article class="articulo producto jornadas prod-prostata prostata antigeno prostatico hombres varonil orina sangre sub-alerta sub-mayor sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas" data-nombre="Jornada de Detección Temprana de Cáncer de Próstata con Antígeno Rápido">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/jornadas_prostata.jpg') }}" alt="Cáncer de Próstata" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Hombres Mayores de 45</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Jornada de Detección Temprana de Cáncer de Próstata con Antígeno Rápido
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Toma de muestra capilar en ayuno para prueba rápida de Antígeno Prostático Específico (PSA) con resultados confidenciales en menos de 20 minutos.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-mars mr-1 text-emerald-600"></i> Urología</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 37: Jornadas + Adultos + Clínica Fija -->
+        <article class="articulo producto jornadas prod-papanicolaou papanicolaou citologia matriz ginecologia mujeres femenina quistes sub-alerta sub-adultos sub-clinica bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas" data-nombre="Feria de Salud Integral de la Mujer: Papanicolaou y Exámenes Ginecológicos">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/jornadas_papanicolaou.jpg') }}" alt="Papanicolaou Gratuito" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Salud Femenina</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Clínica Fija</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Feria de Salud Integral de la Mujer: Papanicolaou y Exámenes Ginecológicos
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Citologías cervicales gratuitas para mujeres de 25 a 64 años, exploración de ganglios linfáticos y consulta preventiva para salud de la mujer.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-venus mr-1 text-emerald-600"></i> Ginecología</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 38: Jornadas + Infantil + Brigada Móvil -->
+        <article class="articulo producto jornadas prod-nutricion nutricion sobrepeso obesidad grasa corporal imc dieta porciones sub-alerta sub-infantil sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas" data-nombre="Módulo de Orientación Nutricional, Medición de Grasa Corporal y Menús Saludables">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/jornadas_nutricion.jpg') }}" alt="Orientación Nutricional" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Familias y Niños</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Módulo de Orientación Nutricional, Medición de Grasa Corporal y Menús Saludables
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Pesaje con básculas de bioimpedancia eléctrica, cálculo de índice de masa corporal (IMC) y entrega de planes alimenticios económicos y balanceados.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-apple-whole mr-1 text-emerald-600"></i> Nutrición Clínica</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 39: Jornadas + Adultos + Brigada Móvil -->
+        <article class="articulo producto jornadas prod-sangre sangre donacion donantes transfusiones plaquetas salvar vidas altruista sub-vacunacion sub-adultos sub-brigada bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas" data-nombre="Campaña Comunitaria de Donación Altruista de Sangre y Tipificación Sanguínea">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/jornadas_sangre.jpg') }}" alt="Donación de Sangre" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Adultos Voluntarios</span>
+                        <span class="bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded text-[11px]">Brigada Móvil</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Campaña Comunitaria de Donación Altruista de Sangre y Tipificación Sanguínea
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Puesto móvil del Centro de Transfusión Sanguínea para captación voluntaria de sangre y entrega gratuita de credenciales con grupo y factor Rh.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-droplet mr-1 text-emerald-600"></i> Banco de Sangre</span>
+                <span class="text-brand-600">Boletín Oficial</span>
+            </div>
+        </article>
+
+        <!-- Artículo 40: Jornadas + Adultos + Planteles Escolares -->
+        <article class="articulo producto jornadas prod-primeros-auxilios primeros auxilios rcp atragantamiento emergencias vendajes quemaduras heimlich sub-alerta sub-adultos sub-escuela bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-slate-200 hover:shadow-2xl transition flex flex-col justify-between group" data-categoria="jornadas" data-nombre="Talleres Prácticos de Primeros Auxilios, RCP Básico y Maniobra de Heimlich">
+            <div>
+                <div class="h-52 overflow-hidden relative">
+                    <img src="{{ asset('img/noticias/jornadas_primeros_auxilios.jpg') }}" alt="Primeros Auxilios RCP" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    <span class="absolute top-3 right-3 bg-emerald-600 text-white font-black px-2.5 py-0.5 rounded-full text-xs uppercase shadow">Jornadas</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex flex-wrap gap-1.5 mb-2">
+                        <span class="bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded text-[11px]">Comunidad y Vecinos</span>
+                        <span class="bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded text-[11px]">Planteles Escolares</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition leading-snug">
+                        Talleres Prácticos de Primeros Auxilios, RCP Básico y Maniobra de Heimlich
+                    </h3>
+                    <p class="text-sm text-slate-600 mt-2 leading-relaxed font-medium">
+                        Capacitación comunitaria con maniquíes de simulación para actuar ante asfixia por atragantamiento, quemaduras caseras y paros cardíacos repentinos.
+                    </p>
+                </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+                <span class="text-slate-500"><i class="fa-solid fa-truck-medical mr-1 text-emerald-600"></i> Paramédicos y Rescate</span>
                 <span class="text-brand-600">Boletín Oficial</span>
             </div>
         </article>
