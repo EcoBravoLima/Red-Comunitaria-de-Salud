@@ -9,6 +9,7 @@ Route::get('/horarios', function () { return view('guia-paciente'); });
 Route::get('/citas', function () { return view('citas'); });
 Route::get('/servicios', function () { return view('servicios'); });
 Route::get('/noticias', function () { return view('noticias'); });
+Route::get('/noticias-act16', function () { return view('noticias_act16'); });
 Route::get('/preguntas', function () { return view('preguntas'); });
 Route::get('/directorio-medico', function () { return view('directorio-medico'); });
 Route::get('/nosotros', function () { return view('nosotros'); });
